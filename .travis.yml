@@ -14,3 +14,4 @@ script:
   - infer -- javac Hello.java
   - ls
   - java -version
+  - ls ~/
