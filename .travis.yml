@@ -1,5 +1,11 @@
 language: java
 #before_install:
 #  - npm install
-#install:
-#  - npm install agularjs
+install:
+  - apt-get update
+  - apt-get install git openjdk-7-jdk m4 zlib1g-dev python-software-properties build-essential libgmp-dev libmpfr-dev libmpc-dev unzip
+  - wget https://github.com/ocaml/opam/releases/download/1.2.2/opam-1.2.2-x86_64-Linux -O opam
+  - chmod +x opam
+  - ./opam init --comp=4.01.0 #(then say 'y' to the final question)
+  - eval `./opam config env`
+  - ./opam install sawja.1.5 atdgen.1.5.0 javalib.2.3a extlib.1.5.4 #(then say 'y' to the question)
