@@ -1,5 +1,4 @@
 language: java
-sudo: true
 #before_install:
 #  - npm install
 install:
