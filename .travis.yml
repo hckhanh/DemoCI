@@ -16,4 +16,6 @@ script:
   - ls
   - ls ~/build
   - ls ~/builds
-  - vi README.md
+  - cat README.md
+after_script:
+  - ls
