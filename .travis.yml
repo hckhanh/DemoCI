@@ -1,5 +1,5 @@
 language: java
 #before_install:
 #  - npm install
-install:
-  - npm install agularjs
+#install:
+#  - npm install agularjs
