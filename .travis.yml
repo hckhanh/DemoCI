@@ -1,4 +1,4 @@
-language: android
+language: node_js
 android:
   components:
     # Uncomment the lines below if you want to
