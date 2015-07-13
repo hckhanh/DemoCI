@@ -13,10 +13,10 @@ android:
     - android-19
 env:
   matrix:
-    - ANDROID_API=19
-    - ANDROID_TARGET=x86
-    - ANDROID_API=22
-    - BUILD_LANG=node_js
+    - ANDROID_API=19 ANDROID_TARGET=x86
+    - ANDROID_API=22 ANDROID_TARGET=x86
+    - ANDROID_API=19 ANDROID_TARGET=armeabi-v7a
+    - ANDROID_API=22 ANDROID_TARGET=armeabi-v7a
 script:
   - cd Client/DemoCI
   - ./gradlew build connectedCheck
