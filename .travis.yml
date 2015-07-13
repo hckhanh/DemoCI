@@ -12,7 +12,11 @@ android:
     # The SDK version used to compile your project
     - android-19
 env:
-  - BUILD_LANG=android
-  - BUILD_LANG=node_js
+  matrix:
+    - ANDROID_API=19
+    - ANDROID_TARGET=x86
+    - ANDROID_API=22
+    - BUILD_LANG=node_js
 script:
-  - ./Client/gradle build connectedCheck
+  - cd Client/DemoCI
+  - ./gradlew build connectedCheck

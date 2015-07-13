@@ -1,4 +1,4 @@
-package com.w4ys.demociandroidapp;
+package com.w4ys.demociapp;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
