@@ -13,7 +13,7 @@ android:
     - android-22
 env:
   global:
-    - ANDROID_DIR=client/client.android
+    - ANDROID_DIR=Client/Client.Android
     - ANDROID_APP1_NAME=DemoApp1
     - ANDROID_APP1_NAME=DemoApp2
     # - NODE_JS_NAME=N/A
