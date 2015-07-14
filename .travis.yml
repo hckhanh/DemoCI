@@ -1,4 +1,25 @@
 language: android
+android:
+  components:
+    # Uncomment the lines below if you want to
+    # use the latest revision of Android SDK Tools
+    - platform-tools
+    - tools
+
+    # The BuildTools version used by your project
+    - build-tools-22.0.1
+
+    # The SDK version used to compile your project
+    - $ANDROID_API
+
+    # Additional components
+    - extra-google-google_play_services
+    - extra-google-m2repository
+    - extra-android-m2repository
+
+    # Specify at least one system image,
+    # if you need to run emulator(s) during your tests
+    - sys-img-$ANDROID_TARGET-$ANDROID_API
 env:
   global:
     - ANDROID_DIR=Client/Client.Android
@@ -21,27 +42,6 @@ env:
     # - ANDROID_API=22 ANDROID_TARGET=x86
     # - ANDROID_API=19 ANDROID_TARGET=armeabi-v7a
     # - ANDROID_API=22 ANDROID_TARGET=armeabi-v7a
-android:
-  components:
-    # Uncomment the lines below if you want to
-    # use the latest revision of Android SDK Tools
-    - platform-tools
-    - tools
-
-    # The BuildTools version used by your project
-    - build-tools-22.0.1
-
-    # The SDK version used to compile your project
-    - $ANDROID_API
-
-    # Additional components
-    - extra-google-google_play_services
-    - extra-google-m2repository
-    - extra-android-m2repository
-
-    # Specify at least one system image,
-    # if you need to run emulator(s) during your tests
-    - sys-img-$ANDROID_TARGET-$ANDROID_API
 before_script:
   - chmod -R ugo+x travis-script/
   - ./travis-script/run-emulator.sh
