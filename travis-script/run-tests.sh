@@ -4,8 +4,7 @@ set -ev
 
 if [ ! -z "${ANDROID_APP1}" ]; then
 	cd ${ANDROID_DIR}/${ANDROID_APP1_NAME}
-	# ./gradlew build ${ANDROID_APP1}
-	ls
+	./gradlew build ${ANDROID_APP1}
 fi
 
 if [ ! -z "${ANDROID_APP2}" ]; then
