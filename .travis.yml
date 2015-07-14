@@ -10,13 +10,24 @@ android:
     # - build-tools-19.1.0
 
     # The SDK version used to compile your project
-    - android-19
+    - android-22
 env:
+  global:
+    - ANDROID_DIR=client/client.android
+    - ANDROID_APP1_NAME=DemoApp1
+    - ANDROID_APP1_NAME=DemoApp2
+    # - NODE_JS_NAME=N/A
   matrix:
-    - ANDROID_API=19 ANDROID_TARGET=x86
-    - ANDROID_API=22 ANDROID_TARGET=x86
-    - ANDROID_API=19 ANDROID_TARGET=armeabi-v7a
-    - ANDROID_API=22 ANDROID_TARGET=armeabi-v7a
-script:
-  - cd Client/DemoCI
-  - ./gradlew build connectedCheck
+    # Use these env variables to run test on Travis:
+    #   ANDROID_APP1
+    #   ANDROID_APP2
+    #   NODE_JS_SERVER
+    - ANDROID_APP1=connectedCheck
+    - ANDROID_APP2=connectedCheck
+    # - NODE_JS_SERVER=connectedCheck
+
+    # Test for multiple platform
+    # - ANDROID_API=22 ANDROID_TARGET=x86
+    # - ANDROID_API=19 ANDROID_TARGET=armeabi-v7a
+    # - ANDROID_API=22 ANDROID_TARGET=armeabi-v7a
+script: ./travis-script/run-test.sh
