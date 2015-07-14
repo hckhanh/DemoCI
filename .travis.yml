@@ -1,11 +1,10 @@
 language: android
-sudo: required
 env:
   global:
     - ANDROID_DIR=Client/Client.Android
     - ANDROID_APP1_NAME=DemoApp1
     - ANDROID_APP2_NAME=DemoApp2
-    - ANDROID_TARGET=x86 # x86 or armeabi-v7a
+    - ANDROID_TARGET=armeabi-v7a # x86 or armeabi-v7a. At this time, Travis can not run android-x86
     - ANDROID_API=android-22
     # - NODE_JS_APP_NAME=N/A
   matrix:
@@ -46,4 +45,21 @@ android:
 before_script:
   - chmod -R ugo+x travis-script/
   - ./travis-script/run-emulator.sh
-script: ./travis-script/run-tests.sh
+script:
+  # Run infer test
+  - wget https://github.com/ocaml/opam/releases/download/1.2.2/opam-1.2.2-x86_64-Linux -O opam
+  - chmod +x opam
+  - ./opam init --yes --comp=4.01.0 #(then say 'y' to the final question)
+  - eval `./opam config env`
+  - ./opam install --yes sawja.1.5 atdgen.1.5.0 javalib.2.3a extlib.1.5.4 #(then say 'y' to the question)
+  
+  - git clone https://github.com/facebook/infer.git
+  - cd infer/
+  - make -C infer java
+  - export PATH=`pwd`/infer/bin:$PATH
+  - cd ..
+  
+  - infer -- ./Client/Client.Android/DemoApp1/gradlew build
+  - infer -- ./Client/Client.Android/DemoApp2/gradlew build
+  # Run test cases
+  - ./travis-script/run-tests.sh
