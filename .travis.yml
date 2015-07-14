@@ -1,4 +1,5 @@
 language: android
+sudo: required
 env:
   global:
     - ANDROID_DIR=Client/Client.Android
