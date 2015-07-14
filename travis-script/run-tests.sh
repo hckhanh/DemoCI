@@ -3,7 +3,6 @@
 set -ev
 
 if [ ! -z "${ANDROID_APP1}" ]; then
-	chmod -R 755 ${ANDROID_DIR}/${ANDROID_APP1_NAME}
 	cd ${ANDROID_DIR}/${ANDROID_APP1_NAME}
 	./gradlew build connectedCheck
 fi
