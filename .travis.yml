@@ -1,4 +1,26 @@
 language: android
+env:
+  global:
+    - ANDROID_DIR=Client/Client.Android
+    - ANDROID_APP1_NAME=DemoApp1
+    - ANDROID_APP2_NAME=DemoApp2
+    - ANDROID_TARGET=x86 # x86 or armeabi-v7a
+    - ANDROID_API=android-22
+    # - NODE_JS_APP_NAME=N/A
+  matrix:
+    # Use these env variables to run test on Travis:
+    #   ANDROID_APP1
+    #   ANDROID_APP2
+    #   NODE_JS_SERVER
+    # Format: <en variable>=<test suite name>
+    - ANDROID_APP1=connectedCheck
+    - ANDROID_APP2=connectedCheck
+    # - NODE_JS_SERVER=connectedCheck
+
+    # Test for multiple platform
+    # - ANDROID_API=22 ANDROID_TARGET=x86
+    # - ANDROID_API=19 ANDROID_TARGET=armeabi-v7a
+    # - ANDROID_API=22 ANDROID_TARGET=armeabi-v7a
 android:
   components:
     # Uncomment the lines below if you want to
@@ -21,28 +43,6 @@ android:
     # if you need to run emulator(s) during your tests
     - sys-img-armeabi-v7a-$ANDROID_API
     - sys-img-$ANDROID_TARGET-$ANDROID_API
-env:
-  global:
-    - ANDROID_DIR=Client/Client.Android
-    - ANDROID_APP1_NAME=DemoApp1
-    - ANDROID_APP2_NAME=DemoApp2
-    - ANDROID_TARGET=armeabi-v7a
-    - ANDROID_API=android-22
-    # - NODE_JS_APP_NAME=N/A
-  matrix:
-    # Use these env variables to run test on Travis:
-    #   ANDROID_APP1
-    #   ANDROID_APP2
-    #   NODE_JS_SERVER
-    # Format: <en variable>=<test suite name>
-    - ANDROID_APP1=connectedCheck
-    - ANDROID_APP2=connectedCheck
-    # - NODE_JS_SERVER=connectedCheck
-
-    # Test for multiple platform
-    # - ANDROID_API=22 ANDROID_TARGET=x86
-    # - ANDROID_API=19 ANDROID_TARGET=armeabi-v7a
-    # - ANDROID_API=22 ANDROID_TARGET=armeabi-v7a
 before_script:
   - chmod -R ugo+x travis-script/
   - ./travis-script/run-emulator.sh
