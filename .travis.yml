@@ -10,7 +10,7 @@ android:
     # - build-tools-19.1.0
 
     # The SDK version used to compile your project
-    - android-22
+    # - android-22
 
     # Android emulator
     - sys-img-x86-android-22
@@ -36,7 +36,7 @@ env:
     # - ANDROID_API=22 ANDROID_TARGET=armeabi-v7a
 before_script:
   - chmod -R ugo+x travis-script/
-  - echo no | android create avd --force -n test -t android- --abi x86 # x86 or armeabi-v7a
+  - echo no | android create avd --force -n test -t android-22 --abi x86 # x86 or armeabi-v7a
   - emulator -avd test -no-skin -no-audio -no-window &
   - android-wait-for-emulator
   - adb shell input keyevent 82 &
