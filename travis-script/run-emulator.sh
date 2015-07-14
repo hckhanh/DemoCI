@@ -5,8 +5,6 @@ set -e
 # Install KVM to run x86 emulator
 if [ "${ANDROID_TARGET}" = "x86" ]; then
 	echo "[ INSTALL KVM ]"
-	egrep -c '(vmx|svm)' /proc/cpuinfo
-	cat /sys/hypervisor/properties/capabilities
 	egrep -c ' lm ' /proc/cpuinfo
 	uname -m
 	sudo apt-get install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils
