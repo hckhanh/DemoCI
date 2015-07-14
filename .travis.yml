@@ -30,4 +30,4 @@ env:
     # - ANDROID_API=22 ANDROID_TARGET=x86
     # - ANDROID_API=19 ANDROID_TARGET=armeabi-v7a
     # - ANDROID_API=22 ANDROID_TARGET=armeabi-v7a
-script: ./travis-script/run-test.sh
+script: ./travis-script/run-tests.sh
