@@ -17,14 +17,15 @@ android:
     - extra-google-m2repository
     - extra-android-m2repository
 
-    # Android emulator
+    # Specify at least one system image,
+    # if you need to run emulator(s) during your tests
     - sys-img-armeabi-v7a-android-22
 env:
   global:
     - ANDROID_DIR=Client/Client.Android
     - ANDROID_APP1_NAME=DemoApp1
     - ANDROID_APP2_NAME=DemoApp2
-    # - NODE_JS_NAME=N/A
+    # - NODE_JS_APP_NAME=N/A
   matrix:
     # Use these env variables to run test on Travis:
     #   ANDROID_APP1
@@ -41,8 +42,5 @@ env:
     # - ANDROID_API=22 ANDROID_TARGET=armeabi-v7a
 before_script:
   - chmod -R ugo+x travis-script/
-  - echo no | android create avd --force -n test -t android-22 --abi armeabi-v7a # x86 or armeabi-v7a
-  - emulator -avd test -no-skin -no-audio -no-window &
-  - android-wait-for-emulator
-  - adb shell input keyevent 82 &
+  - ./travis-script/run-emulator.sh
 script: ./travis-script/run-tests.sh

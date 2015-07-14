@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -ev
+set -e
 
 if [ ! -z "${ANDROID_APP1}" ]; then
 	cd ${ANDROID_DIR}/${ANDROID_APP1_NAME}
