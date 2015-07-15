@@ -14,4 +14,4 @@ git clone https://github.com/facebook/infer.git
 cd infer/
 make -C infer java
 export PATH=`pwd`/infer/bin:$PATH
-cd ..
+cd ../
