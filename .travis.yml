@@ -42,25 +42,13 @@ android:
     # Specify at least one system image,
     # if you need to run emulator(s) during your tests
     - sys-img-$ANDROID_TARGET-$ANDROID_API
-before_script:
-  - chmod -R ugo+x travis-script/
-  - ./travis-script/run-emulator.sh
+before_install:
+  - chmod -R ugo+x travis-script/ 
+install: ./travis-script/install-dependencies.sh
 script:
   # Run infer test
-  - wget https://github.com/ocaml/opam/releases/download/1.2.2/opam-1.2.2-x86_64-Linux -O opam
-  - chmod +x opam
-  - ./opam init --yes --comp=4.01.0 #(then say 'y' to the final question)
-  - eval `./opam config env`
-  - ./opam install --yes sawja.1.5 atdgen.1.5.0 javalib.2.3a extlib.1.5.4 #(then say 'y' to the question)
-  - git clone https://github.com/facebook/infer.git
-  - cd infer/
-  - make -C infer java
-  - export PATH=`pwd`/infer/bin:$PATH
-  - cd ..
-  - cd Client/Client.Android/DemoApp1/
-  - infer -- ./gradlew build
-  - cd ../DemoApp2/
-  - infer -- ./gradlew build
-  - cd ../../../
+  - ./travis-script/run-infer-test.sh
+  # Run Android emulator
+  # - ./travis-script/run-emulator.sh
   # Run test cases
-  - ./travis-script/run-tests.sh
+  - ./travis-script/run-test-cases.sh
