@@ -58,8 +58,10 @@ script:
   - make -C infer java
   - export PATH=`pwd`/infer/bin:$PATH
   - cd ..
-  
-  - infer -- ./Client/Client.Android/DemoApp1/gradlew build
-  - infer -- ./Client/Client.Android/DemoApp2/gradlew build
+  - cd ../Client/Client.Android/DemoApp1/
+  - infer -- ./gradlew build
+  - cd ../DemoApp2/
+  - infer -- ./gradlew build
+  - cd ../../../
   # Run test cases
   - ./travis-script/run-tests.sh
