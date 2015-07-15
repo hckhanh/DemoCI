@@ -3,6 +3,7 @@
 set -e
 
 # Run infer test
+ls
 cd Client/Client.Android/DemoApp1/
 infer -- ./gradlew build
 cd ../DemoApp2/
