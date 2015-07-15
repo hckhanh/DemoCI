@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+set -ev
 
 # Run emulator
 echo no | android create avd --force -n test -t ${ANDROID_API} --abi ${ANDROID_TARGET}

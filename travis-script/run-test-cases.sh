@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+set -ev
 
 # Run Android emulator
 ./travis-script/run-emulator.sh

@@ -13,7 +13,7 @@ set -ev
 git clone https://github.com/facebook/infer.git
 cd infer/
 make -C infer java
-ls
+ls `pwd`/infer/bin
 export PATH=`pwd`/infer/bin:$PATH
 echo $PATH
 cd ../
