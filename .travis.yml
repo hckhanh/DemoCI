@@ -49,7 +49,5 @@ before_install:
   - chmod -R ugo+x travis-script/
   - source ./travis-script/install-dependencies.sh
 script:
-  # Run infer test
-  - ./travis-script/run-infer-test.sh
   # Run test cases
   - ./travis-script/run-test-cases.sh
