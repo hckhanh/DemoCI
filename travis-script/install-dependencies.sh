@@ -15,3 +15,4 @@ cd infer/
 make -C infer java
 export PATH=`pwd`/infer/bin:$PATH
 cd ../
+ls

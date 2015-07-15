@@ -51,4 +51,4 @@ script:
   # Run Android emulator
   # - ./travis-script/run-emulator.sh
   # Run test cases
-  - ./travis-script/run-test-cases.sh
+  # - ./travis-script/run-test-cases.sh
