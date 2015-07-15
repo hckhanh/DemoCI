@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+set -ev
 
 # Install Opaml
  wget https://github.com/ocaml/opam/releases/download/1.2.2/opam-1.2.2-x86_64-Linux -O opam
