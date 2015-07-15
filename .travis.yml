@@ -48,6 +48,7 @@ before_script: ./travis-script/install-dependencies.sh
 script:
   # Run infer test
   - ./travis-script/run-infer-test.sh
+
   # Run Android emulator
   # - ./travis-script/run-emulator.sh
   # Run test cases
