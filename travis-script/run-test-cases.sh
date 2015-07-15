@@ -14,3 +14,9 @@ if [ ! -z "${ANDROID_APP2}" ]; then
 	cd ${ANDROID_DIR}/${ANDROID_APP2_NAME}
 	./gradlew build ${ANDROID_APP2}
 fi
+
+if [ ! -z "${NODE_JS_SERVER}" ]; then
+	cd Server/
+	npm install
+	npm ${NODE_JS_SERVER}
+fi

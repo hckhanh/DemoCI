@@ -15,12 +15,15 @@ env:
     # Format: <en variable>=<test suite name>
     - ANDROID_APP1=connectedCheck
     - ANDROID_APP2=connectedCheck
+    - NODE_JS_SERVER=test
     # - NODE_JS_SERVER=connectedCheck
 
     # Test for multiple platform
     # - ANDROID_API=22 ANDROID_TARGET=x86
     # - ANDROID_API=19 ANDROID_TARGET=armeabi-v7a
     # - ANDROID_API=22 ANDROID_TARGET=armeabi-v7a
+notifications:
+  email: false
 android:
   components:
     # Uncomment the lines below if you want to
@@ -43,13 +46,10 @@ android:
     # if you need to run emulator(s) during your tests
     - sys-img-$ANDROID_TARGET-$ANDROID_API
 before_install:
-  - chmod -R ugo+x travis-script/ 
-install: source ./travis-script/install-dependencies.sh
+  - chmod -R ugo+x travis-script/
+  - source ./travis-script/install-dependencies.sh
 script:
   # Run infer test
   - ./travis-script/run-infer-test.sh
-
-  # Run Android emulator
-  # - ./travis-script/run-emulator.sh
   # Run test cases
-  # - ./travis-script/run-test-cases.sh
+  - ./travis-script/run-test-cases.sh
