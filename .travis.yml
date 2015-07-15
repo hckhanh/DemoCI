@@ -44,7 +44,7 @@ android:
     - sys-img-$ANDROID_TARGET-$ANDROID_API
 before_install:
   - chmod -R ugo+x travis-script/ 
-install: ./travis-script/install-dependencies.sh
+before_script: ./travis-script/install-dependencies.sh
 script:
   # Run infer test
   - ./travis-script/run-infer-test.sh
