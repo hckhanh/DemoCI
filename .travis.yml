@@ -52,13 +52,12 @@ script:
   - ./opam init --yes --comp=4.01.0 #(then say 'y' to the final question)
   - eval `./opam config env`
   - ./opam install --yes sawja.1.5 atdgen.1.5.0 javalib.2.3a extlib.1.5.4 #(then say 'y' to the question)
-  
   - git clone https://github.com/facebook/infer.git
   - cd infer/
   - make -C infer java
   - export PATH=`pwd`/infer/bin:$PATH
   - cd ..
-  - cd ../Client/Client.Android/DemoApp1/
+  - cd Client/Client.Android/DemoApp1/
   - infer -- ./gradlew build
   - cd ../DemoApp2/
   - infer -- ./gradlew build
