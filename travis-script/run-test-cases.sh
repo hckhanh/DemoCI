@@ -26,6 +26,5 @@ fi
 
 if [ ! -z "${NODE_JS_SERVER}" ]; then
 	cd Server/
-	npm install
 	npm $NODE_JS_SERVER
 fi
