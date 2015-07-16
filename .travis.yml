@@ -7,6 +7,7 @@ env:
     - ANDROID_TARGET=armeabi-v7a # x86 or armeabi-v7a. At this time, Travis can not run android-x86
     - ANDROID_API=android-22
     # - NODE_JS_APP_NAME=N/A
+    
   matrix:
     # Use these env variables to run test on Travis:
     #   ANDROID_APP1
@@ -15,11 +16,9 @@ env:
     # Format: <en variable>=<test suite name>
     - ANDROID_APP1=connectedCheck
     - ANDROID_APP2=connectedCheck
-    - NODE_JS_SERVER=test
-    # - NODE_JS_SERVER=connectedCheck
+    # - NODE_JS_SERVER=test
 
-    # Test for multiple platform
-    # - ANDROID_API=22 ANDROID_TARGET=x86
+    # Test for multiple Android API
     # - ANDROID_API=19 ANDROID_TARGET=armeabi-v7a
     # - ANDROID_API=22 ANDROID_TARGET=armeabi-v7a
 notifications:

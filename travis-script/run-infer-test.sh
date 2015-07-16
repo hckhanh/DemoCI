@@ -3,8 +3,8 @@
 set -ev
 
 # Run infer test
-cd Client/Client.Android/DemoApp1/
+cd $ANDROID_DIR/$ANDROID_APP1_NAME/
 infer -- ./gradlew build
-cd ../DemoApp2/
+cd ../$ANDROID_APP2_NAME/
 infer -- ./gradlew build
-cd ../../../
+cd $TRAVIS_BUILD_DIR/
