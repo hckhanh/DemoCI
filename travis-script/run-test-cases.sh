@@ -5,7 +5,7 @@ set -ev
 # Run Android emulator
 if [ ! -z "${ANDROID_APP1}" ] || [ ! -z "${ANDROID_APP2}" ]; then
 	# Run infer test
-	./travis-script/run-infer-test.sh
+	# ./travis-script/run-infer-test.sh
 
 	# Run android emulator
 	./travis-script/run-emulator.sh
@@ -13,7 +13,7 @@ if [ ! -z "${ANDROID_APP1}" ] || [ ! -z "${ANDROID_APP2}" ]; then
 	# This is not correct, yet.
 	if [ ! -z "${ANDROID_APP1}" ]; then
 		cd $ANDROID_DIR/$ANDROID_APP1_NAME/
-		./gradlew build $ANDROID_APP1
+		./gradlew $ANDROID_APP1
 		cd $TRAVIS_BUILD_DIR/
 	fi
 
