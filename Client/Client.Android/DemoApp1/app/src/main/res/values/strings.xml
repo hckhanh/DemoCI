@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">DemoApp1</string>
 
-    <string name="hello_world">Hello world!</string>
+    <string name="hello_world">Number 1</string>
     <string name="action_settings">Settings</string>
+    <string name="click_this_btn">Calculate Sum</string>
+    <string name="enter_number_1">Enter your number 1</string>
+    <string name="enter_number_2">Enter your number 2</string>
+    <string name="number_2">Number 2</string>
+    <string name="result">Result number</string>
 </resources>

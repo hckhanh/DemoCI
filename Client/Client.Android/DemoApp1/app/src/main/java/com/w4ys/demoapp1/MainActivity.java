@@ -1,9 +1,12 @@
 package com.w4ys.demoapp1;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -12,6 +15,25 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Button btnClick = (Button) findViewById(R.id.btnCalculateSum);
+        btnClick.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText editTextNumber1 = (EditText) findViewById(R.id.editTextNumber1);
+                EditText editTextNumber2 = (EditText) findViewById(R.id.editTextNumber2);
+                EditText editTextResult = (EditText) findViewById(R.id.editTextResult);
+
+                int number1 = Integer.parseInt(editTextNumber1.getText().toString());
+                int number2 = Integer.parseInt(editTextNumber2.getText().toString());
+
+                editTextResult.setText(Integer.toString(sum2Number(number1, number2)));
+            }
+        });
+    }
+
+    private int sum2Number(int number1, int number2) {
+        return number1 + number2;
     }
 
     @Override

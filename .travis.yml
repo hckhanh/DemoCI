@@ -13,12 +13,12 @@ env:
     #   ANDROID_APP1
     #   ANDROID_APP2
     #   NODE_JS_SERVER
-    # Format: <en variable>=<test suite name>
-    - ANDROID_APP1=connectedCheck
-    - ANDROID_APP2=connectedCheck
-    # - NODE_JS_SERVER=test
+    - ANDROID_APP1
+    - ANDROID_APP2
+    # - NODE_JS_SERVER
 
-    # Test for multiple Android API
+    # Test for multiple API
+    # - ANDROID_API=15 ANDROID_TARGET=armeabi-v7a
     # - ANDROID_API=19 ANDROID_TARGET=armeabi-v7a
     # - ANDROID_API=22 ANDROID_TARGET=armeabi-v7a
 notifications:
