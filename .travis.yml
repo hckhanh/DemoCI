@@ -15,7 +15,7 @@ env:
     #   NODE_JS_SERVER
     - ANDROID_APP1=connectedCheck
     - ANDROID_APP2=connectedCheck
-    # - NODE_JS_SERVER
+    # - NODE_JS_SERVER=test
 
     # Test for multiple API
     # - ANDROID_API=15 ANDROID_TARGET=armeabi-v7a
