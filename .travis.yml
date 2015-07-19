@@ -37,10 +37,10 @@ android:
     - $ANDROID_API
 
     # Additional components
-    - extra-android-support-22.2.0
     - extra-google-google_play_services
-    - extra-google-m2repository-22.2.0
-    - extra-android-m2repository-22.2.0
+    - extra-google-m2repository
+    - extra-android-m2repository
+    - extra-android-support
 
     # Specify at least one system image,
     # if you need to run emulator(s) during your tests
