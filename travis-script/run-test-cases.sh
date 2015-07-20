@@ -8,7 +8,7 @@ if [ ! -z "${ANDROID_APP1}" ] || [ ! -z "${ANDROID_APP2}" ]; then
 	# ./travis-script/run-infer-test.sh
 
 	# Run android emulator
-	./travis-script/run-emulator.sh
+	# ./travis-script/run-emulator.sh
 
 	# This is not correct, yet.
 	if [ ! -z "${ANDROID_APP1}" ]; then
