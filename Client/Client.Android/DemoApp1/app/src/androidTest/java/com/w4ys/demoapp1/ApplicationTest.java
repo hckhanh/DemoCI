@@ -1,12 +1,7 @@
 package com.w4ys.demoapp1;
 
-import android.support.test.rule.ActivityTestRule;
-import android.support.test.runner.AndroidJUnit4;
-import android.test.suitebuilder.annotation.SmallTest;
-
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import android.support.test.InstrumentationRegistry;
+import android.test.ActivityInstrumentationTestCase2;
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
@@ -18,14 +13,19 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
 /**
  * <a href="http://d.android.com/tools/testing/testing_android.html">Testing Fundamentals</a>
  */
-@RunWith(AndroidJUnit4.class)
-@SmallTest
-public class ApplicationTest {
+public class ApplicationTest extends ActivityInstrumentationTestCase2<MainActivity> {
 
-    @Rule
-    public ActivityTestRule <MainActivity> mActivityTestRule = new ActivityTestRule<MainActivity>(MainActivity.class);
+    public ApplicationTest() {
+        super(MainActivity.class);
+    }
 
-    @Test
+    @Override
+    protected void setUp() throws Exception {
+        super.setUp();
+        injectInstrumentation(InstrumentationRegistry.getInstrumentation());
+        getActivity();
+    }
+
     public void testSum2PositiveNumber() {
         int number1 = 12;
         int number2 = 10;
