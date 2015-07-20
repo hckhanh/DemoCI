@@ -34,7 +34,7 @@ android:
     - build-tools-22.0.1
 
     # The SDK version used to compile your project
-    - $ANDROID_API
+    - $ANDROID_TARGET
 
     # Additional components
     - extra-google-google_play_services
@@ -44,7 +44,7 @@ android:
 
     # Specify at least one system image,
     # if you need to run emulator(s) during your tests
-    - sys-img-$ANDROID_TARGET-$ANDROID_API
+    - sys-img-$ANDROID_ABI-$ANDROID_TARGET
 before_install:
   - chmod -R ugo+x travis-script/
   # - source ./travis-script/install-dependencies.sh
