@@ -21,6 +21,8 @@ env:
     # - ANDROID_TARGET=android-15 ANDROID_ABI=armeabi-v7a
     # - ANDROID_TARGET=android-19 ANDROID_ABI=armeabi-v7a
     # - ANDROID_TARGET=android-22 ANDROID_ABI=armeabi-v7a
+git:
+    depth: 1
 notifications:
   email: false
 android:
