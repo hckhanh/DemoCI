@@ -3,7 +3,7 @@ package com.w4ys.demoapp1;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
 import android.test.ActivityInstrumentationTestCase2;
-import android.test.suitebuilder.annotation.SmallTest;
+import android.test.suitebuilder.annotation.LargeTest;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -20,7 +20,7 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
  * <a href="http://d.android.com/tools/testing/testing_android.html">Testing Fundamentals</a>
  */
 @RunWith(AndroidJUnit4.class)
-@SmallTest
+@LargeTest
 public class ApplicationTest extends ActivityInstrumentationTestCase2<MainActivity> {
 
     public ApplicationTest() {
@@ -36,7 +36,7 @@ public class ApplicationTest extends ActivityInstrumentationTestCase2<MainActivi
 
     @Test
     public void testConstValue() {
-        assertEquals(1, 2);
+        assertEquals(1, 1);
     }
 
     @Test
