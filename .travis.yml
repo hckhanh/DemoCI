@@ -4,8 +4,8 @@ env:
     - ANDROID_DIR=Client/Client.Android
     - ANDROID_APP1_NAME=DemoApp1
     - ANDROID_APP2_NAME=DemoApp2
-    - ANDROID_TARGET=armeabi-v7a # x86 or armeabi-v7a. At this time, Travis can not run android-x86
-    - ANDROID_API=android-22
+    - ANDROID_ABI=armeabi-v7a # x86 or armeabi-v7a. At this time, Travis can not run android-x86
+    - ANDROID_TARGET=android-22
     # - NODE_JS_APP_NAME=N/A
     
   matrix:
@@ -18,9 +18,9 @@ env:
     # - NODE_JS_SERVER=test
 
     # Test for multiple API
-    # - ANDROID_API=15 ANDROID_TARGET=armeabi-v7a
-    # - ANDROID_API=19 ANDROID_TARGET=armeabi-v7a
-    # - ANDROID_API=22 ANDROID_TARGET=armeabi-v7a
+    # - ANDROID_TARGET=android-15 ANDROID_ABI=armeabi-v7a
+    # - ANDROID_TARGET=android-19 ANDROID_ABI=armeabi-v7a
+    # - ANDROID_TARGET=android-22 ANDROID_ABI=armeabi-v7a
 notifications:
   email: false
 android:
@@ -38,9 +38,9 @@ android:
 
     # Additional components
     - extra-google-google_play_services
-    - extra-google-m2repository-22.2.0
-    - extra-android-m2repository-22.2.0
-    - extra-android-support-22.2.0
+    - extra-google-m2repository
+    - extra-android-m2repository
+    - extra-android-support
 
     # Specify at least one system image,
     # if you need to run emulator(s) during your tests
