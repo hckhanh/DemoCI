@@ -5,10 +5,10 @@ set -ev
 # Run Android emulator
 if [ ! -z "${ANDROID_APP1}" ] || [ ! -z "${ANDROID_APP2}" ]; then
 	# Run infer test
-	# ./travis-script/run-infer-test.sh
+	./travis-script/run-infer-test.sh
 
 	# Run android emulator
-	# ./travis-script/run-emulator.sh
+	./travis-script/run-emulator.sh
 
 	# This is not correct, yet.
 	if [ ! -z "${ANDROID_APP1}" ]; then

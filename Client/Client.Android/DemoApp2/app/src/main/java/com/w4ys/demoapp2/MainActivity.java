@@ -24,6 +24,8 @@ public class MainActivity extends ActionBarActivity {
                 textView.setText("Clicked!");
             }
         });
+        Integer i = null;
+        i.byteValue();
     }
 
     @Override

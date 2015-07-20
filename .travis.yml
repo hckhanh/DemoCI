@@ -47,9 +47,7 @@ android:
     - sys-img-$ANDROID_ABI-$ANDROID_TARGET
 before_install:
   - chmod -R ugo+x travis-script/
-  # - source ./travis-script/install-dependencies.sh
-before_script:
-  - ./travis-script/run-emulator.sh
+  - source ./travis-script/install-dependencies.sh
 script:
   # Run test cases
   - ./travis-script/run-test-cases.sh
