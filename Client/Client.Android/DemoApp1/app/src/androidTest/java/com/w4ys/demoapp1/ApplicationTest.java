@@ -1,6 +1,7 @@
 package com.w4ys.demoapp1;
 
 import android.support.test.InstrumentationRegistry;
+import android.support.test.espresso.action.ViewActions;
 import android.test.ActivityInstrumentationTestCase2;
 
 import static android.support.test.espresso.Espresso.onView;
@@ -30,6 +31,8 @@ public class ApplicationTest extends ActivityInstrumentationTestCase2<MainActivi
         int number1 = 12;
         int number2 = 10;
         int expectedResult = 22;
+
+        ViewActions.closeSoftKeyboard();
 
         onView(withId(R.id.editTextNumber1)).perform(typeText(Integer.toString(number1)));
         onView(withId(R.id.editTextNumber2)).perform(typeText(Integer.toString(number2)));
