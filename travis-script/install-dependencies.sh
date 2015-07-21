@@ -10,7 +10,7 @@ eval `./opam config env`
 ./opam install --yes sawja.1.5 atdgen.1.5.0 javalib.2.3a extlib.1.5.4 #(then say 'y' to the question)
 
 # Install infer (latest version)
-git clone https://github.com/facebook/infer.git
+git clone https://github.com/tgummerer/infer
 cd infer/
 make -C infer java
 # chmod -R ugo+x .

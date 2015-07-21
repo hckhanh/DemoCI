@@ -2,7 +2,7 @@ language: android
 env:
   global:
     - ANDROID_DIR=Client/Client.Android
-    - ANDROID_APP1_NAME=ExampleTestProject_AndroidStudio_v5.4.1
+    - ANDROID_APP1_NAME=DemoApp1
     - ANDROID_APP2_NAME=DemoApp2
     - ANDROID_ABI=armeabi-v7a # x86 or armeabi-v7a. At this time, Travis can not run android-x86
     - ANDROID_TARGET=android-22
