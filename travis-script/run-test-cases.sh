@@ -11,9 +11,9 @@ if [ "$ANDROID_APP1" == "true" ] || [ "$ANDROID_APP2" == "true" ]; then
 	cd $ANDROID_DIR/$ANDROID_PROJECT_NAME/
 
 	# Run connectedCheck of Android App 1
-	if [ "$ANDROID_APP1" == "true" ]; then
-		./gradlew :$ANDROID_APP1_MODULE_NAME:assembleDebug
-	fi
+	#if [ "$ANDROID_APP1" == "true" ]; then
+	#	./gradlew :$ANDROID_APP1_MODULE_NAME:assembleDebug
+	#fi
 
 	# Run connectedCheck of Android App 2
 	#if [ "$ANDROID_APP2" == "true" ]; then
