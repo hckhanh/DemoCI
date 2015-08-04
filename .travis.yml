@@ -1,29 +1,62 @@
 language: android
+
+branches:
+  only:
+    - master
+
+git:
+  depth: 1
+
+notifications:
+  email: false
+
 env:
   global:
-    - ANDROID_DIR=Client/Client.Android
-    - ANDROID_APP1_NAME=DemoApp1
-    - ANDROID_APP2_NAME=DemoApp2
+    # General information:
     - ANDROID_ABI=armeabi-v7a # x86 or armeabi-v7a. At this time, Travis can not run android-x86
     - ANDROID_TARGET=android-22
+
+    # Android project configurations:
+    - ANDROID_DIR=Client/Client.Android
+    - ANDROID_PROJECT_NAME=DemoApps
+    - BUILD_TYPE=travisCI
+    - RELEASE_PATH_FILE=build/outputs/apk
     # - NODE_JS_APP_NAME=N/A
+
+    # Android apps information:
+
+    # ANDROID_STORE_PASS
+    - secure: d7Bw7ANEzfGw51E5C5W2k47ed86ZyXLdLMkQhvjQiDElrQ17lJJwwqaYahqdGqrzjjwkZOgIDsH9Z4Oqe0bOGVeKujcHMcPfafVORn+4DZNO+ccXl5bim0EXEu7kB/E2JbY1vEnSwNaIPriO37tvIAAwzSeORnfyvjccEgrP6JIXKUM0Jfrv37KIWir86JruaBkft0PV70WB9cF/w8TO8VfVS3/02MLxHNm+ADzs5JaDwNc/MHmFLGY68uNpnPnYtJrS1DNRIr/urXWokjNPXISNXHEm4p8LJlS9h6WQ+DsNOgp3dQ+SLqsYj0KVpRVryHo4tYtqmR02PmE6t/JYY3qnP/YvlNHrLFMdX3ohPuH4SbVrH8wFwlEU26C8pZFs3n0uhu+1aX0WF4JtQqQ38/IO3zi19LijrqFXir4dLTv3pJjDLOS8hao6fh6r7NoaxlA4OdlfzPRk9MeRxY1KjmuGS2LlVWaE7UM6bnPizUFubl8we9+v2iP1eKTfSWOEhc91o2ZlqaRdVXCL+QYPe/rPw2jsULUYYs+aFVz/x/1zEvx3/Y2gEYGGDrJ+ZNTbyu25Jo1DlRnkeK/59+qhJwEQvxes7NHSeV251GF8js3P+CfAzmm8yvr8VHSV3EMrTfFvPo5Z4ThkL1jwr9ndDqjdHytvNRhrQpG4OcJ5Nck=
+
+    ##### Android App 1 #####
+
+    - ANDROID_APP1_NAME=DemoApp1
+    - ANDROID_APP1_MODULE_NAME=app1
+    # ANDROID_APP1_KEY_PASS
+    - secure: Z+FraEzxE5VZ4NoxIkQXFMNtBHXq/5e6LUlnIEXkWpyJBDXiVF8uf+6e+VjPX6yVxgEQIsNzn9jvt66uN74iAs4QTHtr5BE7p4YRf3UKrvfHV7fev1zuLSExHUJSuyYyfuuxCiEt2NuuL2PL5SY1LVqTL4GzoB4MQY9i3l8KAB+ndiqHfuhRMSVvSSbRJl8a9BaFpOotUQNfzjDpIbJr+qvhgksHhHee+N9Nr+aD9StftKpaljwEP/+aEY/Xv0zruafAAqUX+vvXDB/a0bo8cjjX2gvI8TklJYfEGOLyNOR+3j0WWKWi9MEBxrtROy1kis86FiXp5VoyBdnyODFE0pspu3W9TmmawQfWO5N0v+1bYecVImqXzv+HsqF7/q80M255N/1Rd8JHntpt42gpjdY6/jy289zj/gjsk+NZ7wDUXWlFP8G8s/BHC7Qk1ulhCdw709cSMEmW01hQD0z8Jz1VA6WmoO+KQXnWh1l7d2Fv4giKBfmxnyIHJJqGS1FQnA9izF+jVQ+Ehc/JXcSEiRNFLptKTepf6a/KCDieihFsEo5UyQiwPJLlgdEVESfONlczgn35VQiQI5UBsj/9LwM0QcICkqxzCM+k/lFwthi5k7CkqplWjVZQLp4MiOJFnS/XvA0Znvidt7a1TO56um3v+VI4HZIWJhltxuR0qWs=
+
+    ##### Android App 2 #####
+
+    - ANDROID_APP2_NAME=DemoApp2
+    - ANDROID_APP2_MODULE_NAME=app2
+    # ANDROID_APP2_KEY_PASS
+    - secure: Qreabq1EFH01y0vNvlOLamcwIx921L2IDR6rSU7TbWwd/y/s1YD9+4rCwWQEABZENnF+AVQqn/ephSjLkobLfRzOqemCYxsSZ+Pjo0gW1++uXVXSDTt0z3fMVs0BuwA+TGo+ThReZXVI2BF9O9je1QVsgeHbKBVtCQ+PE9Qaabpge+lq4nEpFt6EIgc5NxFcgUkuj7JvV6SoTtrxKqnSz6wpZPyOCRXP5HA9XTUWqk/OeC1l8fjT+/DnY04EPmkaR4pLof6k2txkX9rudVN+Pb600eQ8Pyg9LqZN2PFGGCGVayv/0ZrKgr0i/4CNtH8ccgFiIsf+/WcGdrcg8gtetXmJ6nyUIxKk1praVTNxRQQTiscKAz7yaLacXQUKK6sgPgmZo+q+YO6FOFhEsGeSQGjCs+C9rcJcK718AmZ990SanXdcUli0aTmNIYMDtinHicXb+tzfVVZP7AGtVAwbSuSkRlEqlWm4TDk9xpRGxB9fSOYrjImxdBrL58pCd5bCqlIAXGjggqmR4nsWAh3yJZaT5oykLltXG+tmPPii25ELnyrqbZ9OaHe2pMNGLvYPmqI9B/TJ13VOdgHld0FErWHs5wYy2EJ1o7RollXJJYd8IAE1/7A38VbV7GwPG1m9U5qx/YgMFqY3IUgFl6xoqVqwHZ9pwjKAbC0a4EbVJr0=
+
   matrix:
     # Use these env variables to run test on Travis:
     #   ANDROID_APP1
     #   ANDROID_APP2
     #   NODE_JS_SERVER
-    - ANDROID_APP1=connectedCheck
-    - ANDROID_APP2=connectedCheck
+    # - ANDROID_APP1=connectedCheck
+    - ANDROID_APP1=true
+    - ANDROID_APP2=true
     # - NODE_JS_SERVER=test
 
-    # Test for multiple API
+    # Test for multiple API (NOT work)
     # - ANDROID_TARGET=android-15 ANDROID_ABI=armeabi-v7a
     # - ANDROID_TARGET=android-19 ANDROID_ABI=armeabi-v7a
     # - ANDROID_TARGET=android-22 ANDROID_ABI=armeabi-v7a
-git:
-    depth: 1
-notifications:
-  email: false
+
 android:
   components:
     # Uncomment the lines below if you want to
@@ -33,7 +66,6 @@ android:
 
     # The BuildTools version used by your project
     - build-tools-22.0.1
-    - build-tools-21.1.1
 
     # The SDK version used to compile your project
     - $ANDROID_TARGET
@@ -46,9 +78,27 @@ android:
     # Specify at least one system image,
     # if you need to run emulator(s) during your tests
     - sys-img-$ANDROID_ABI-$ANDROID_TARGET
+
 before_install:
   - chmod -R ugo+x travis-script/
   - source ./travis-script/install-dependencies.sh
+
 script:
-  # Run test cases
+  # Run Android and/or Node.js test cases
   - ./travis-script/run-test-cases.sh
+
+before_deploy:
+  # Generate relesea files to publish to GitHub
+  - ./travis-script/generate-signed-apks.sh
+
+#deploy:
+#  provider: releases
+#  api_key:
+#    secure: NWsgjZ+h3uQ2xMlwcsrpwWOecrY4ExIbZjWQm6fMnWSENpz1Oy1vOTTlUJMFfjZc9kbOTF5a7qFPr/kJlEDuygpNNXqUMy/IZhxqX/T81RJF7CZN/sL3MorE/w77EPxZBbhDekf20xc1zWfDE5Wa4jTX3SevNffWHLXflmmgxCToettIP9yu2JU4tJeqx6jRA3aTMbUt32tPU+uKocxkNAmWLz4QCbVZgs16KqhUuUec3FjrDfcvkSE6mHQIIdlRZMQFUhsWJF5k4Fimp1XESmdByr58ugDn7NS8orWJAbeWRf4QspOicCBezjNtM/jk4iS7ciNNP4MAp03NDgkK9O/eqQ1LJIR10UxqfKK/njCkVFO1JOmIpU3QqoRNwB5OY1gpY2zrCFi6A0SlOpIMeOlEq7+S7P5xl5/eZbJL2xN9OxfsyJniGfaKsm1k+JLfvRH9ZVuu1dvem9LlBdzFhku2FJmMXfaaCJcpWJ5YWfrCSLHChVatehTFX13pr7kKbJ5IrQmlR2o7BEEXyi8QWfVWaeF9e1LOhfguq/oHvxY/YkFLeVsNmrtD5ZhlWd3uBDlX0OjniD1cbiScqjDYbmoQxvjhs2UZzvQEsyB6YIw4x06iuk2/igS/9S8mg/Kgh23ivp5lFIBhDkRJujNbWNxSpPvoToP8sXckwzNDLJw=
+#  file:
+#    - ./$ANDROID_DIR/$ANDROID_PROJECT_NAME/$ANDROID_APP1_MODULE_NAME/$RELEASE_PATH_FILE/$ANDROID_APP1_NAME-$TRAVIS_TAG.apk
+#    - ./$ANDROID_DIR/$ANDROID_PROJECT_NAME/$ANDROID_APP2_MODULE_NAME/$RELEASE_PATH_FILE/$ANDROID_APP2_NAME-$TRAVIS_TAG.apk
+#  skip_cleanup: true
+#  on:
+#    tags: true
+#    branch: master
