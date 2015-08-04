@@ -8,7 +8,7 @@ import junit.framework.TestCase;
 public class ApplicationTest1 extends TestCase {
 
     public void testEmailValidator_CorrectEmailSimple_ReturnsTrue() {
-        assertEquals(1, 1);
+        assertEquals(2, 1);
     }
 
 }

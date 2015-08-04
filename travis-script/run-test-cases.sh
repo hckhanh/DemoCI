@@ -15,12 +15,12 @@ if [ "$ANDROID_APP1" == "true" ] || [ "$ANDROID_APP2" == "true" ]; then
 
 	# Run connectedCheck of Android App 1
 	if [ "$ANDROID_APP1" == "true" ]; then
-		./gradlew :$ANDROID_APP1_MODULE_NAME:build :$ANDROID_APP1_MODULE_NAME:connectedCheck
+		./gradlew :$ANDROID_APP1_MODULE_NAME:assembleDebug :$ANDROID_APP1_MODULE_NAME:connectedCheck
 	fi
 
 	# Run connectedCheck of Android App 2
 	if [ "$ANDROID_APP2" == "true" ]; then
-		./gradlew :$ANDROID_APP2_MODULE_NAME:build :$ANDROID_APP2_MODULE_NAME:connectedCheck
+		./gradlew :$ANDROID_APP2_MODULE_NAME:assembleDebug :$ANDROID_APP2_MODULE_NAME:connectedCheck
 	fi
 
 	cd $TRAVIS_BUILD_DIR/

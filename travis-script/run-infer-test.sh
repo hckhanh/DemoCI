@@ -8,12 +8,12 @@ chmod ugo+x ./gradlew
 
 # Run infer test of Android App 1
 if [ "$ANDROID_APP1" == "true" ]; then
-	infer -- ./gradlew :$ANDROID_APP1_MODULE_NAME:build
+	infer -- ./gradlew :$ANDROID_APP1_MODULE_NAME:assembleDebug
 fi
 
 # Run infer test of Android App 1
 if [ "$ANDROID_APP2" == "true" ]; then
-	infer -- ./gradlew :$ANDROID_APP2_MODULE_NAME:build
+	infer -- ./gradlew :$ANDROID_APP2_MODULE_NAME:assembleDebug
 fi
 
 cd $TRAVIS_BUILD_DIR/
