@@ -47,8 +47,13 @@ env:
     #   ANDROID_APP1
     #   ANDROID_APP2
     #   NODE_JS_SERVER
+
+    # For matrix testing
+    # - ANDROID_APP1=true
+    # - ANDROID_APP2=true
+
+    # For deployment
     - ANDROID_APP1=true ANDROID_APP2=true
-    # - NODE_JS_SERVER=true
 
     # Test for multiple API (NOT work)
     # - ANDROID_TARGET=android-15 ANDROID_ABI=armeabi-v7a
