@@ -6,7 +6,7 @@ set -ev
 if [ "$ANDROID_APP1" == "true" ] || [ "$ANDROID_APP2" == "true" ]; then
 	
 	# Run infer test
-	./travis-script/run-infer-test.sh
+	# ./travis-script/run-infer-test.sh
 
 	cd $ANDROID_DIR/$ANDROID_PROJECT_NAME/
 

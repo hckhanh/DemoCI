@@ -84,7 +84,7 @@ android:
 
 before_install:
   - chmod -R ugo+x travis-script/
-  - source ./travis-script/install-dependencies.sh
+  # - source ./travis-script/install-dependencies.sh
 
 script:
   # Run Android and/or Node.js test cases

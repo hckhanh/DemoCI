@@ -1,4 +1,4 @@
-package com.demo.app1;
+package com.demo.app1.functional;
 
 import junit.framework.TestCase;
 
