@@ -3,6 +3,7 @@ package com.demo.app1;
 import android.app.Instrumentation;
 import android.test.ActivityInstrumentationTestCase2;
 import android.test.TouchUtils;
+import android.test.suitebuilder.annotation.MediumTest;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -33,6 +34,7 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
         btnButton = (Button) mainActivity.findViewById(R.id.button);
     }
 
+    @MediumTest
     public void testClickToChangeButton() {
         String expectedText = "Text is changed!";
         String actualText;
