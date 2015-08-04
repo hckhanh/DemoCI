@@ -8,19 +8,29 @@ if [ "$ANDROID_APP1" == "true" ] || [ "$ANDROID_APP2" == "true" ]; then
 	# Run infer test
 	./travis-script/run-infer-test.sh
 
-	# Run android emulator
-	./travis-script/run-emulator.sh
-
 	cd $ANDROID_DIR/$ANDROID_PROJECT_NAME/
 
 	# Run connectedCheck of Android App 1
 	if [ "$ANDROID_APP1" == "true" ]; then
-		./gradlew :$ANDROID_APP1_MODULE_NAME:assembleDebug :$ANDROID_APP1_MODULE_NAME:connectedCheck
+		./gradlew :$ANDROID_APP1_MODULE_NAME:assembleDebug
 	fi
 
 	# Run connectedCheck of Android App 2
 	if [ "$ANDROID_APP2" == "true" ]; then
-		./gradlew :$ANDROID_APP2_MODULE_NAME:assembleDebug :$ANDROID_APP2_MODULE_NAME:connectedCheck
+		./gradlew :$ANDROID_APP2_MODULE_NAME:assembleDebug
+	fi
+
+	# Run android emulator
+	$TRAVIS_BUILD_DIR/travis-script/run-emulator.sh
+
+	# Run connectedCheck of Android App 1
+	if [ "$ANDROID_APP1" == "true" ]; then
+		./gradlew :$ANDROID_APP1_MODULE_NAME:connectedCheck
+	fi
+
+	# Run connectedCheck of Android App 2
+	if [ "$ANDROID_APP2" == "true" ]; then
+		./gradlew :$ANDROID_APP2_MODULE_NAME:connectedCheck
 	fi
 
 	cd $TRAVIS_BUILD_DIR/
