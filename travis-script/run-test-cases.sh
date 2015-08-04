@@ -11,19 +11,19 @@ if [ "$ANDROID_APP1" == "true" ] || [ "$ANDROID_APP2" == "true" ]; then
 	# Run android emulator
 	./travis-script/run-emulator.sh
 
-	# Run Android App 1 connectedCheck
+	cd $ANDROID_DIR/$ANDROID_PROJECT_NAME/
+
+	# Run connectedCheck of Android App 1
 	if [ "$ANDROID_APP1" == "true" ]; then
-		cd $ANDROID_DIR/$ANDROID_PROJECT_NAME/
 		./gradlew :$ANDROID_APP1_MODULE_NAME:build :$ANDROID_APP1_MODULE_NAME:connectedCheck
-		cd $TRAVIS_BUILD_DIR/
 	fi
 
-	# Run Android App 2's test cases
+	# Run connectedCheck of Android App 2
 	if [ "$ANDROID_APP2" == "true" ]; then
-		cd $ANDROID_DIR/$ANDROID_PROJECT_NAME/
 		./gradlew :$ANDROID_APP2_MODULE_NAME:build :$ANDROID_APP2_MODULE_NAME:connectedCheck
-		cd $TRAVIS_BUILD_DIR/
 	fi
+
+	cd $TRAVIS_BUILD_DIR/
 
 fi
 

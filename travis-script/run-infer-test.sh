@@ -5,5 +5,15 @@ set -ev
 # Run infer test
 cd $ANDROID_DIR/$ANDROID_PROJECT_NAME/
 chmod ugo+x ./gradlew
-infer -- ./gradlew :$ANDROID_APP1_MODULE_NAME:build
+
+# Run infer test of Android App 1
+if [ "$ANDROID_APP1" == "true" ]; then
+	infer -- ./gradlew :$ANDROID_APP1_MODULE_NAME:build
+fi
+
+# Run infer test of Android App 1
+if [ "$ANDROID_APP2" == "true" ]; then
+	infer -- ./gradlew :$ANDROID_APP2_MODULE_NAME:build
+fi
+
 cd $TRAVIS_BUILD_DIR/
