@@ -34,7 +34,6 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
         btnButton = (Button) mainActivity.findViewById(R.id.button);
     }
 
-    @MediumTest
     public void testClickToChangeButton() {
         String expectedText = "Text is changed!";
         String actualText;
