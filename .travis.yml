@@ -15,7 +15,7 @@ env:
     # General information:
     - ANDROID_ABI=armeabi-v7a # x86 or armeabi-v7a. At this time, Travis can not run android-x86
     - ANDROID_TARGET=android-22
-    - ADB_INSTALL_TIMEOUT=8 # minutes (2 minutes by default)
+    - ADB_INSTALL_TIMEOUT=10 # minutes (2 minutes by default)
 
     # Android project configurations:
     - ANDROID_DIR=Client/Client.Android
