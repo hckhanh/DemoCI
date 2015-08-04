@@ -100,7 +100,7 @@ deploy:
   api_key:
     secure: NWsgjZ+h3uQ2xMlwcsrpwWOecrY4ExIbZjWQm6fMnWSENpz1Oy1vOTTlUJMFfjZc9kbOTF5a7qFPr/kJlEDuygpNNXqUMy/IZhxqX/T81RJF7CZN/sL3MorE/w77EPxZBbhDekf20xc1zWfDE5Wa4jTX3SevNffWHLXflmmgxCToettIP9yu2JU4tJeqx6jRA3aTMbUt32tPU+uKocxkNAmWLz4QCbVZgs16KqhUuUec3FjrDfcvkSE6mHQIIdlRZMQFUhsWJF5k4Fimp1XESmdByr58ugDn7NS8orWJAbeWRf4QspOicCBezjNtM/jk4iS7ciNNP4MAp03NDgkK9O/eqQ1LJIR10UxqfKK/njCkVFO1JOmIpU3QqoRNwB5OY1gpY2zrCFi6A0SlOpIMeOlEq7+S7P5xl5/eZbJL2xN9OxfsyJniGfaKsm1k+JLfvRH9ZVuu1dvem9LlBdzFhku2FJmMXfaaCJcpWJ5YWfrCSLHChVatehTFX13pr7kKbJ5IrQmlR2o7BEEXyi8QWfVWaeF9e1LOhfguq/oHvxY/YkFLeVsNmrtD5ZhlWd3uBDlX0OjniD1cbiScqjDYbmoQxvjhs2UZzvQEsyB6YIw4x06iuk2/igS/9S8mg/Kgh23ivp5lFIBhDkRJujNbWNxSpPvoToP8sXckwzNDLJw=
   file: ./release-$TRAVIS_TAG.zip
-#  skip_cleanup: true
+  skip_cleanup: true
   on:
     tags: true
     branch: master
