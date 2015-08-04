@@ -4,6 +4,7 @@ set -ev
 
 # Check whether this is a tag build or not
 if [ -n "$TRAVIS_TAG" ]; then
+
 	# Generate Android App 1's relesae file
 	if [ "$ANDROID_APP1" == "true" ]; then
 		cd $ANDROID_DIR/$ANDROID_PROJECT_NAME/
@@ -21,4 +22,5 @@ if [ -n "$TRAVIS_TAG" ]; then
 		mv $ANDROID_APP2_MODULE_NAME-$BUILD_TYPE.apk $ANDROID_APP2_NAME-$TRAVIS_TAG.apk
 		cd $TRAVIS_BUILD_DIR/
 	fi
+	
 fi

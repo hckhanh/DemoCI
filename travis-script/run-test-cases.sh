@@ -4,6 +4,7 @@ set -ev
 
 # Run Android emulator
 if [ "$ANDROID_APP1" == "true" ] || [ "$ANDROID_APP2" == "true" ]; then
+	
 	# Run infer test
 	./travis-script/run-infer-test.sh
 
@@ -23,6 +24,7 @@ if [ "$ANDROID_APP1" == "true" ] || [ "$ANDROID_APP2" == "true" ]; then
 		./gradlew :$ANDROID_APP2_MODULE_NAME:build :$ANDROID_APP2_MODULE_NAME:connectedCheck
 		cd $TRAVIS_BUILD_DIR/
 	fi
+
 fi
 
 if [ "$NODE_JS_SERVER" == "true" ]; then
