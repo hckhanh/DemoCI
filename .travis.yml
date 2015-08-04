@@ -50,8 +50,8 @@ env:
     #   NODE_JS_SERVER
 
     # For matrix testing
+    # - ANDROID_APP1=true
     - ANDROID_APP2=true
-    # - ANDROID_APP2=true
 
     # For deployment
     # - ANDROID_APP1=true ANDROID_APP2=true
@@ -91,9 +91,9 @@ script:
   # Run Android and/or Node.js test cases
   - ./travis-script/run-test-cases.sh
 
-#before_deploy:
+before_deploy:
   # Generate release files to publish to GitHub
-#  - ./travis-script/build-for-tag-release.sh
+  - ./travis-script/build-for-tag-release.sh
 
 #deploy:
 #  provider: releases
