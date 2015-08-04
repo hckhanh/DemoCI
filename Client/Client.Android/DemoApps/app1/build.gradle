@@ -4,8 +4,8 @@ android {
     signingConfigs {
         travisCIConfig {
             keyAlias 'com.demo.app1'
-            keyPassword 'a7dxb$vC$v2nA7Ln5446'
-            storePassword '8Y1ta6@n@eD4l6c34ees'
+            keyPassword System.getenv('ANDROID_APP1_KEY_PASS')
+            storePassword System.getenv('ANDROID_STORE_PASS')
             storeFile file('../cert/release-keystore.jks')
         }
     }
