@@ -1,4 +1,4 @@
-package com.demo.app1;
+package com.demo.app1.functional;
 
 import android.app.Instrumentation;
 import android.test.ActivityInstrumentationTestCase2;
@@ -6,6 +6,9 @@ import android.test.TouchUtils;
 import android.test.suitebuilder.annotation.MediumTest;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.demo.app1.MainActivity;
+import com.demo.app1.R;
 
 /**
  * Created by hckhanh on 04/08/2015.
