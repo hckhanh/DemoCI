@@ -50,7 +50,7 @@ env:
     #   NODE_JS_SERVER
 
     # For matrix testing
-    - ANDROID_APP1=true
+    - ANDROID_APP2=true
     # - ANDROID_APP2=true
 
     # For deployment
