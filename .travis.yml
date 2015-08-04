@@ -15,6 +15,7 @@ env:
     # General information:
     - ANDROID_ABI=armeabi-v7a # x86 or armeabi-v7a. At this time, Travis can not run android-x86
     - ANDROID_TARGET=android-22
+    - ADB_INSTALL_TIMEOUT=10 # minutes (2 minutes by default)
 
     # Android project configurations:
     - ANDROID_DIR=Client/Client.Android
@@ -49,11 +50,11 @@ env:
     #   NODE_JS_SERVER
 
     # For matrix testing
-    # - ANDROID_APP1=true
+    - ANDROID_APP1=true
     # - ANDROID_APP2=true
 
     # For deployment
-    - ANDROID_APP1=true ANDROID_APP2=true
+    # - ANDROID_APP1=true ANDROID_APP2=true
 
     # Test for multiple API (NOT work now)
     # - ANDROID_TARGET=android-15 ANDROID_ABI=armeabi-v7a
