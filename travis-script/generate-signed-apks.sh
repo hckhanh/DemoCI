@@ -5,7 +5,7 @@ set -ev
 # Check whether this is a tag build or not
 if [ -n "$TRAVIS_TAG" ]; then
 
-	# Generate Android App 1's relesae file
+	# Generate release file of Android App 1
 	if [ "$ANDROID_APP1" == "true" ]; then
 		cd $ANDROID_DIR/$ANDROID_PROJECT_NAME/
 		./gradlew :$ANDROID_APP1_MODULE_NAME:assemble$BUILD_TYPE
@@ -14,7 +14,7 @@ if [ -n "$TRAVIS_TAG" ]; then
 		cd $TRAVIS_BUILD_DIR/
 	fi
 
-	# Generate Android App 2's relesae file
+	# Generate release file of Android App 2
 	if [ "$ANDROID_APP2" == "true" ]; then
 		cd $ANDROID_DIR/$ANDROID_PROJECT_NAME/
 		./gradlew :$ANDROID_APP2_MODULE_NAME:assemble$BUILD_TYPE

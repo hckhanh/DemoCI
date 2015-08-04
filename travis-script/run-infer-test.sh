@@ -11,7 +11,7 @@ if [ "$ANDROID_APP1" == "true" ]; then
 	infer -- ./gradlew :$ANDROID_APP1_MODULE_NAME:assembleDebug
 fi
 
-# Run infer test of Android App 1
+# Run infer test of Android App 2
 if [ "$ANDROID_APP2" == "true" ]; then
 	infer -- ./gradlew :$ANDROID_APP2_MODULE_NAME:assembleDebug
 fi
