@@ -4,6 +4,7 @@ import android.app.Instrumentation;
 import android.test.ActivityInstrumentationTestCase2;
 import android.test.TouchUtils;
 import android.test.suitebuilder.annotation.MediumTest;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -20,6 +21,9 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
 
     TextView textView;
     Button btnButton;
+    private View view1;
+    private View view2;
+    private View view3;
 
     public MainActivityTest() {
         super(MainActivity.class);
@@ -29,11 +33,11 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
     protected void setUp() throws Exception {
         super.setUp();
         setActivityInitialTouchMode(true);
+        instrumentation = getInstrumentation();
         mainActivity = getActivity();
 
         textView = (TextView) mainActivity.findViewById(R.id.textView);
         btnButton = (Button) mainActivity.findViewById(R.id.button);
-
     }
 
     @MediumTest
