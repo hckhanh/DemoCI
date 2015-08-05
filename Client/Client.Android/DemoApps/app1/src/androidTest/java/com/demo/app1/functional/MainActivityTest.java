@@ -33,10 +33,11 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
 
         textView = (TextView) mainActivity.findViewById(R.id.textView);
         btnButton = (Button) mainActivity.findViewById(R.id.button);
+
     }
 
     @MediumTest
-    public void testClickToChangeButton() {
+    public void testTextViewLayout() {
         String expectedText = "Text is changed!";
         String actualText;
 
