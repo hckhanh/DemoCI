@@ -42,9 +42,4 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
         assertEquals(ViewGroup.LayoutParams.WRAP_CONTENT, textView.getLayoutParams().height);
     }
 
-    @MediumTest
-    public void testButtons() {
-        assertEquals(36, btnButton.getMeasuredHeight());
-    }
-
 }
