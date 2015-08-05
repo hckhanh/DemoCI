@@ -15,7 +15,7 @@ if [ "$ANDROID_APP1" == "true" ] || [ "$ANDROID_APP2" == "true" ]; then
 
 	# Run connectedCheck of Android App 1
 	if [ "$ANDROID_APP1" == "true" ]; then
-		./gradlew :$ANDROID_APP1_MODULE_NAME:build :$ANDROID_APP1_MODULE_NAME:connectedCheck
+		./gradlew :$ANDROID_APP1_MODULE_NAME:connectedCheck
 	fi
 
 	# Run connectedCheck of Android App 2

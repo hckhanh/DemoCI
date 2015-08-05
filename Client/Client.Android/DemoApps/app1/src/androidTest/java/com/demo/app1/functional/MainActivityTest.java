@@ -43,8 +43,8 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
     }
 
     @MediumTest
-    public void testValidataTextView() {
-        assertEquals("Hello world!", textView.getText());
+    public void testButtons() {
+        assertEquals(36, btnButton.getMeasuredHeight());
     }
 
 }
