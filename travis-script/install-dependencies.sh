@@ -13,6 +13,5 @@ eval `./opam config env`
 git clone https://github.com/tgummerer/infer
 cd infer/
 make -C infer java
-# chmod -R ugo+x .
 export PATH=`pwd`/infer/bin:$PATH
 cd ../

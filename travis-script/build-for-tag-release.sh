@@ -34,6 +34,7 @@ if [ -n "$TRAVIS_TAG" ]; then
 
 	cd $TRAVIS_BUILD_DIR/
 
+	# Zip all release files
 	zip -r release-$TRAVIS_TAG.zip release-$TRAVIS_TAG/
 
 fi

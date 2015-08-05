@@ -3,6 +3,7 @@ package com.demo.app1.functional;
 import android.app.Instrumentation;
 import android.test.ActivityInstrumentationTestCase2;
 import android.test.suitebuilder.annotation.MediumTest;
+import android.util.DisplayMetrics;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
@@ -40,6 +41,12 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
     public void testTextViewLayout() {
         assertEquals(ViewGroup.LayoutParams.WRAP_CONTENT, textView.getLayoutParams().width);
         assertEquals(ViewGroup.LayoutParams.WRAP_CONTENT, textView.getLayoutParams().height);
+    }
+
+    @MediumTest
+    public void testButtons() {
+        DisplayMetrics displayMetrics = mainActivity.getResources().getDisplayMetrics();
+        assertEquals(36f * displayMetrics.density, (float)btnButton.getHeight());
     }
 
 }
