@@ -2,9 +2,9 @@ package com.demo.app1.functional;
 
 import android.app.Instrumentation;
 import android.test.ActivityInstrumentationTestCase2;
-import android.test.TouchUtils;
 import android.test.suitebuilder.annotation.MediumTest;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -42,13 +42,8 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
 
     @MediumTest
     public void testTextViewLayout() {
-        String expectedText = "Text is changed!";
-        String actualText;
-
-        TouchUtils.clickView(this, btnButton);
-        actualText = textView.getText().toString();
-
-        assertEquals(expectedText, actualText);
+        assertEquals(ViewGroup.LayoutParams.WRAP_CONTENT, textView.getLayoutParams().width);
+        assertEquals(ViewGroup.LayoutParams.WRAP_CONTENT, textView.getLayoutParams().height);
     }
 
 }
