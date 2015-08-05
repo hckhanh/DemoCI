@@ -3,7 +3,6 @@ package com.demo.app1.functional;
 import android.app.Instrumentation;
 import android.test.ActivityInstrumentationTestCase2;
 import android.test.suitebuilder.annotation.MediumTest;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
@@ -21,9 +20,6 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
 
     TextView textView;
     Button btnButton;
-    private View view1;
-    private View view2;
-    private View view3;
 
     public MainActivityTest() {
         super(MainActivity.class);
