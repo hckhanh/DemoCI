@@ -4,6 +4,7 @@ branches:
   only:
     - master
     - /(?i:v)[0-9]*.?[0-9]*/
+    - demo
 
 git:
   depth: 1
