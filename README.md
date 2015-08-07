@@ -1,6 +1,5 @@
 # DemoCI [![Build Status](https://travis-ci.org/hckhanh/DemoCI.svg?branch=master)](https://travis-ci.org/hckhanh/DemoCI)
 
-[![Join the chat at https://gitter.im/hckhanh/DemoCI](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/hckhanh/DemoCI?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 Demo How to make a CI repos. This is the main structure of the project.
 
 ## Test plan
