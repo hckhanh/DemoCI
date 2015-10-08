@@ -1,0 +1,112 @@
+language: android
+
+branches:
+  only:
+    - master
+    - /(?i:v)[0-9]*.?[0-9]*/
+    - demo
+
+git:
+  depth: 1
+
+notifications:
+  webhooks:
+    urls: https://webhooks.gitter.im/e/19cddbb753d7177c505c
+    on_success: change  # options: [always|never|change] default: always
+    on_failure: always  # options: [always|never|change] default: always
+    on_start: change    # options: [always|never|change] default: always
+
+env:
+  global:
+    # General information:
+    - ANDROID_ABI=armeabi-v7a # x86 or armeabi-v7a. At this time, Travis can not run android-x86
+    - ANDROID_TARGET=android-22
+    - ADB_INSTALL_TIMEOUT=10 # minutes (2 minutes by default)
+
+    # Android project configurations:
+    - ANDROID_DIR=Client/Client.Android
+    - ANDROID_PROJECT_NAME=DemoApps
+    - BUILD_TYPE=travisCI
+    - RELEASE_PATH_FILE=build/outputs/apk
+    # - NODE_JS_APP_NAME=N/A
+
+    # Android apps information:
+
+    # ANDROID_STORE_PASS
+    - secure: G/z92lG09CbzIOvgdzWRYWN58bjJmL21aOqsbr0ekno1VIFU63y5D7aS8pUN9QyVnAHAf+KGzUBC/+WAkmcTSjHhgjdF24KEEPGSxFb1fFSFcK17gID5hm1LfVv3ttFpIgl45/P0mBrgWF2yqd3Bci+C0Jm4BBWpFiu6HetV93b4kTyUVx82jINdqEZGwMo15ZOI+V8xRvc6y1cVdMO8qA6T+w9ugtrHGs64OwMEClGxVY41mc/phCt2wvCHgK/aUx1B+uBYyXAUlbUlRAqkJ+/0JSNvYnKpykwgWWwgFQ3bWZaMNuXEUx1W7x1QISyM6LDOUvqs6v9SxBA1q/s9DtfaQM8W3/xqZMo0fvfSdIw6hMMU2+AZW9ggtD0JB5UH3mgyX5S6c1T1kYs8fuLTaq6/Lk3+R2EM20EhA/ZQMA3bunKcgfyDkV/roZP9ZXQSN80seXih4goxvH0QdoGOpyzBJ1otLDoSHwt/VC7NhuwxJetWQy90rAhm1r2Mvk1ts4Mh2t6eRhC0X4VMtBN5YceH4C8fCdxgRbJs34sJ+9+54EPAKtQGi3VwYwfaYbf8etsi1RVx/IdD+12/n1lCqHV4FaaSUY3PGQFkjbVmUw+8wmPMEhIreyiZq+zTY+9ddjeNKC5qKqYN+RviGmaRFR27NFi2mXvthJM5hDmuKAE=
+
+    ##### Android App 1 #####
+
+    - ANDROID_APP1_NAME=DemoApp1
+    - ANDROID_APP1_MODULE_NAME=app1
+    # ANDROID_APP1_KEY_PASS
+    - secure: NBlHXaDX0itOs/WreOu/M3Br1geN1uWQc/xgV5o9HzXLHxA036L2bBeXx1WQSLYAPddPdORxEu7TCwrw17zmuQtdFp/ivDS7nvHCrlX2DNjqoHueEnFjYqkqBGMVzJJeo43b46iYyHGyORmiTmlunouePSmiSN9mDLxh8mwqYzab1zNWdVZDvuevHjtUtHKKNgy2vWYG8HIKjnwM5PmOiTWBfEgVj+C5NMGRBJD1yEpEb/3l6d5304BpLEovSO9nh22VM2h7z2AEkn9g2MsazAEquvWQlIsKa2aWrkW/UKFGx0LiIO1MJ30bnSa6+TAf7ZlFsyRDSvZWZ9MY93/1c86lJDu1Shwh0MIzE7PXOyke24WTTB/QgEqV+99AvWLsTUtjRjp9ZU39WB1Ob9dm9+5m7+QdpWH0+tF1PizDE0gAD4iBVq3jSrlZpkvpy5CuP7mGxXA/2BX5cii4uhgvlyKDabHju175JPz8ZudpC8SSGjdNZopmTkucOZrQ9SsVh7vMrfiirXx84R2CdPnmiy+2Z2aZ1f56Fyo2peRoo+IPWAteK5nNadkXRKkhnfnuqLCm03LOhz5w8m2COhnYWqYrIx3NbdRRB8oVrfCEuxr5sB6PAI+UMRT4wVEVvaofT+B+SEk0XMIwGOS/LgON8ZpjeAO1UXrjer3ZlgryMmU=
+
+    ##### Android App 2 #####
+
+    - ANDROID_APP2_NAME=DemoApp2
+    - ANDROID_APP2_MODULE_NAME=app2
+    # ANDROID_APP2_KEY_PASS
+    - secure: hQruVD9Xz+1tOxDC7g/YGd7drcXt2Zss0YxIKpYh252N8axDncHwTXxNf+hP8xACheD6FNpVv+aqoLa2Jv7CwLNzcVNxWR3ZVsLW+TnwTOrXPCqTFRt1YGyk/9WNXBhHal5AXIJJnFL6bRU6aP6aBCkBVbDXcaMX7Lr6OqX9l6uMTr2cQe0SQqoGE2513hfbMzrNj1I8F2cQnWaFIpAGyVOAeCMFZ3XTeWFzna+3su5l62PoOXNMTLeFqPY3yzcK+ER/eN7C4mOwkd2z+rUGVTF82AceYBER0bEUb+KoUHGJtrlak+m8dapDZgOMbEv4IbOmmj6nmynmTeoytfW08vn3oo2rUlEjo+TWEVEe/aMM9ZaC1OljF7KW/AG6rtbrOO22j0wJ/de7C9NQ9aQODiTDOvvBVqWlpnszPjMgCmL2GYHSol8LzFtzFRdGYFi2Raf/OWx83MPWPsHxq2+lVufLEaAerwaexXznJps+O0lJz09g9FkLAFPm+uFwtVLe0fOMlD52PHQt1fkBDOJw1M03QO1ytEw8eh3n2s+/lQ3PA29gdrdxziNdG+LdyAoHJBFMMJryVeqNtM/ZGAQhcQJp5o/RM3DGL4iFukalTAEZNZCgPKyMsofExggKk3T7IjklwXRS8Xni5NlPtIuHY4m04MXctNtWqEOOy/8mKj0=
+
+  matrix:
+    # Use these env variables to run test on Travis:
+    #   ANDROID_APP1
+    #   ANDROID_APP2
+    #   NODE_JS_SERVER
+
+    # For matrix testing
+    - ANDROID_APP1=true
+    #- ANDROID_APP2=true
+
+    # For deployment
+    # - ANDROID_APP1=true ANDROID_APP2=true
+
+    # Test for multiple API (NOT work now)
+    # - ANDROID_TARGET=android-15 ANDROID_ABI=armeabi-v7a
+    # - ANDROID_TARGET=android-19 ANDROID_ABI=armeabi-v7a
+    # - ANDROID_TARGET=android-22 ANDROID_ABI=armeabi-v7a
+
+android:
+  components:
+    # Uncomment the lines below if you want to
+    # use the latest revision of Android SDK Tools
+    - platform-tools
+    - tools
+
+    # The BuildTools version used by your project
+    - build-tools-22.0.1
+
+    # The SDK version used to compile your project
+    - $ANDROID_TARGET
+
+    # Additional components
+    - extra-google-google_play_services
+    - extra-google-m2repository
+    - extra-android-m2repository
+
+    # Specify at least one system image,
+    # if you need to run emulator(s) during your tests
+    - sys-img-$ANDROID_ABI-$ANDROID_TARGET
+
+before_install:
+  - chmod -R ugo+x travis-script/
+  # - source ./travis-script/install-dependencies.sh
+
+script:
+  # Run Android and/or Node.js test cases
+  - ./travis-script/run-test-cases.sh
+
+#before_deploy:
+  # Generate release files to publish to GitHub
+  # - ./travis-script/build-for-tag-release.sh
+
+#deploy:
+#  provider: releases
+#  api_key:
+#    secure: NWsgjZ+h3uQ2xMlwcsrpwWOecrY4ExIbZjWQm6fMnWSENpz1Oy1vOTTlUJMFfjZc9kbOTF5a7qFPr/kJlEDuygpNNXqUMy/IZhxqX/T81RJF7CZN/sL3MorE/w77EPxZBbhDekf20xc1zWfDE5Wa4jTX3SevNffWHLXflmmgxCToettIP9yu2JU4tJeqx6jRA3aTMbUt32tPU+uKocxkNAmWLz4QCbVZgs16KqhUuUec3FjrDfcvkSE6mHQIIdlRZMQFUhsWJF5k4Fimp1XESmdByr58ugDn7NS8orWJAbeWRf4QspOicCBezjNtM/jk4iS7ciNNP4MAp03NDgkK9O/eqQ1LJIR10UxqfKK/njCkVFO1JOmIpU3QqoRNwB5OY1gpY2zrCFi6A0SlOpIMeOlEq7+S7P5xl5/eZbJL2xN9OxfsyJniGfaKsm1k+JLfvRH9ZVuu1dvem9LlBdzFhku2FJmMXfaaCJcpWJ5YWfrCSLHChVatehTFX13pr7kKbJ5IrQmlR2o7BEEXyi8QWfVWaeF9e1LOhfguq/oHvxY/YkFLeVsNmrtD5ZhlWd3uBDlX0OjniD1cbiScqjDYbmoQxvjhs2UZzvQEsyB6YIw4x06iuk2/igS/9S8mg/Kgh23ivp5lFIBhDkRJujNbWNxSpPvoToP8sXckwzNDLJw=
+#  file: ./release-$TRAVIS_TAG.zip
+#  skip_cleanup: true
+#  on:
+#    tags: true
+#    branch: master
